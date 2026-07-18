@@ -72,7 +72,6 @@ A principal dificuldade no desenvolvimento do projeto foi construir uma interfac
 1. CESCHIM, Humberto. **Redes de Fluxo - Algoritmo de Ford-Fulkerson**. Universidade Federal de Alfenas (UNIFAL-MG). Disponível em: [https://www.bcc.unifal-mg.edu.br/~humberto/disciplinas/2010_2_grafos/pdf_aulas/aula_16.pdf](https://www.bcc.unifal-mg.edu.br/~humberto/disciplinas/2010_2_grafos/pdf_aulas/aula_16.pdf).
 2. RIBEIRO, Pedro. **Desenho e Análise de Algoritmos: Fluxo Máximo**. Faculdade de Ciências da Universidade do Porto (FCUP). Disponível em: [https://www.dcc.fc.up.pt/~pribeiro/aulas/daa2021/slides/10_fluxo_30122020.pdf](https://www.dcc.fc.up.pt/~pribeiro/aulas/daa2021/slides/10_fluxo_30122020.pdf).
 
-```
 ### Detalhes da Implementação e do Código
 * **Linguagem de Programação:** Node.js (JavaScript moderno ES6+).
 * **Módulos Utilizados:** `node:readline/promises` e `node:process` para entrada e saída assíncrona no terminal.
