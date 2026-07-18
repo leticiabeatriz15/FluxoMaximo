@@ -73,5 +73,3 @@ A principal dificuldade no desenvolvimento do projeto foi construir uma interfac
 2. RIBEIRO, Pedro. **Desenho e Análise de Algoritmos: Fluxo Máximo**. Faculdade de Ciências da Universidade do Porto (FCUP). Disponível em: [https://www.dcc.fc.up.pt/~pribeiro/aulas/daa2021/slides/10_fluxo_30122020.pdf](https://www.dcc.fc.up.pt/~pribeiro/aulas/daa2021/slides/10_fluxo_30122020.pdf).
 
 ```
-
-```
