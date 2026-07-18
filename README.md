@@ -1,5 +1,6 @@
 # Trabalho de Tópicos Especiais em Computação – 2026.1
 **Professor:** João Paulo Lima do Nascimento
+
 **Instituição:** Instituto Federal de Educação, Ciência e Tecnologia do Piauí (IFPI) - Campus Picos  
 
 ## Identificação do Aluno
