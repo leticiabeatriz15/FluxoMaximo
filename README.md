@@ -73,3 +73,25 @@ A principal dificuldade no desenvolvimento do projeto foi construir uma interfac
 2. RIBEIRO, Pedro. **Desenho e Análise de Algoritmos: Fluxo Máximo**. Faculdade de Ciências da Universidade do Porto (FCUP). Disponível em: [https://www.dcc.fc.up.pt/~pribeiro/aulas/daa2021/slides/10_fluxo_30122020.pdf](https://www.dcc.fc.up.pt/~pribeiro/aulas/daa2021/slides/10_fluxo_30122020.pdf).
 
 ```
+### Detalhes da Implementação e do Código
+* **Linguagem de Programação:** Node.js (JavaScript moderno ES6+).
+* **Módulos Utilizados:** `node:readline/promises` e `node:process` para entrada e saída assíncrona no terminal.
+* **Estrutura do Projeto:** 
+  * `Grafo.js`: Contém a estrutura de dados da rede e o motor matemático do algoritmo.
+  * `Main.js`: Gerencia a interface de linha de comando (CLI) e a interação com o usuário.
+
+#### Funcionamento das Estruturas Críticas:
+
+1. **Modelagem por Matriz de Adjacência (`this.grafo`):**
+   O grafo é representado internamente por uma matriz bidimensional de tamanho $V \times V$ inicializada com zeros. Cada célula `this.grafo[origem][destino]` armazena a capacidade residual daquela aresta específica.
+
+2. **Busca em Largura Adaptada (`bfs`):**
+   A função `bfs` tem o papel de encontrar o caminho mais curto transitável entre a fonte e o sumidouro. Para que um vértice `v` seja adicionado à fila de exploração a partir de um vértice `u`, o código valida duas condições restritivas: `!visitado[v]` (evita loops) e `this.grafo[u][v] > 0`. A segunda condição garante que o algoritmo só caminhe por arestas que ainda possuem capacidade residual disponível. Durante a busca, o vetor `pai` armazena o caminho percorrido para que ele possa ser reconstruído posteriormente.
+
+3. **Gargalo do Caminho (`fluxoCaminho`):**
+   Ao encontrar um caminho válido com a BFS, o método `fluxoMaximo` faz um rastreamento reverso (do destino até a origem) utilizando o vetor `pai`. Nessa varredura, calcula-se o "gargalo" do caminho (`Math.min`), que corresponde à menor capacidade encontrada ao longo das arestas daquela rota. Esse valor define o máximo de fluxo que pode ser enviado por ali de uma só vez.
+
+4. **Atualização da Rede Residual (Arestas Reversas):**
+   Após descobrir o valor do gargalo, o código percorre o caminho novamente para atualizar as capacidades da matriz:
+   * `this.grafo[u][v] -= fluxoCaminho;` -> Reduz a capacidade da aresta direta, já que parte do seu limite foi consumido.
+   * `this.grafo[v][u] += fluxoCaminho;` -> Aumenta a capacidade da aresta reversa em igual proporção. Essa operação matemática é fundamental no método de Ford-Fulkerson/Edmonds-Karp, pois permite que algoritmos futuros possam "desfazer" ou redirecionar fluxos enviados incorretamente em iterações anteriores (mecanismo de refluxo).
