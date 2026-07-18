@@ -1,5 +1,4 @@
 # Trabalho de Tópicos Especiais em Computação – 2026.1
-**Componente Curricular:** Implementação em Otimização Combinatória  
 **Professor:** João Paulo  
 **Instituição:** Instituto Federal de Educação, Ciência e Tecnologia do Piauí (IFPI) - Campus Picos  
 
